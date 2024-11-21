@@ -21,7 +21,7 @@ namespace API.Controllers
         }
         //[Authorize(Roles = "1")]
         [HttpPost]
-        public async Task<IActionResult> Agregar([FromBody] PerfilRequest perfil)
+        public async Task<IActionResult> Agregar([FromBody]PerfilRequest perfil)
         {
             var resultado = await _perfilFlujo.Agregar(perfil);
             return CreatedAtAction(nameof(Obtener), new { Id = resultado }, null);
